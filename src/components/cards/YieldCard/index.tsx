@@ -6,6 +6,7 @@ interface Props {
   coin: string;
   fixed: number;
   variable: number;
+
 }
 
 const YieldCard: React.FC<Props> = ({ title, coin, fixed, variable }) => {

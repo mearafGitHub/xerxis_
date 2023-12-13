@@ -1,140 +1,71 @@
-import DoorImg1 from "@/src/assets/images/sec8_door1.svg";
-import DoorImg2 from "@/src/assets/images/sec8_door2.svg";
-import DoorImg3 from "@/src/assets/images/sec8_door3.svg";
-import DoorImg4 from "@/src/assets/images/sec8_door4.svg";
 import HomeTitle from "@/src/components/HomeTitle";
-import { MenuButton } from "@/src/components/Navbar";
-import useScrollPosition from "@/src/hooks/useScrollPosition";
-import {
-  Box,
-  Container,
-  Stack,
-  Typography,
-  styled,
-  useTheme,
-} from "@mui/material";
+import React from "react";
+import { Stack, Container, Typography } from "@mui/material";
 import Image from "next/image";
-import { useRef } from "react";
+import Logo from "public/Xerxis-Logo-v1.svg";
 
-const StyledDoor = styled(Image)({
-  position: "absolute",
-  zIndex: -1,
-  willChange: "transform",
-});
+type StatProps = {
+  title: string;
+  subtitle: string;
+};
 
-const Section8 = () => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const scrollPosition = useScrollPosition(containerRef);
-  const theme = useTheme();
+const Stat: React.FC<StatProps> = ({ title, subtitle }) => (
+  <Stack alignItems="center">
+    <Typography variant="h3">{title}</Typography>
+    <Typography color="primary.light" variant="body2">
+      {subtitle}
+    </Typography>
+  </Stack>
+);
 
+const Section3 = () => {
   return (
-    <Container ref={containerRef} maxWidth="md" sx={{ mt: 15 }}>
-      <Stack alignItems="center" sx={{ textAlign: "center", mb: 5 }}>
-        <HomeTitle sx={{ mb: 1.5 }} color={theme.palette.primary.contrastText}>
-          THE PLAYGROUND
-        </HomeTitle>
+    <Container maxWidth="md">
+      <Stack alignItems="center" sx={{ textAlign: "center" }}>
+        <HomeTitle sx={{ mb: 1.5 }}>THE GAME</HomeTitle>
 
         <Typography variant="h2" sx={{ fontWeight: "bold", mb: 2 }}>
-          Build on Voltz
+          Decentralized. Profitable. Immersive.
         </Typography>
 
-        <Typography
-          sx={{ letterSpacing: "1.5px", maxWidth: 720 }}
-          color="text.secondary"
-        >
-          Join a growing community of hackers, innovators and developers
-          building on Voltz. Join us, let's make a dent in the defi universe.
+        <Typography sx={{ letterSpacing: "1.5px" }} color="text.secondary">
+          Xexis is Web 3 game platform, leveraging the Ethereum and Cardano blockchain.
+          The game is set on a planet called Xerxis, where a mysterious event has unleashed a wave of cosmic energy 
+          that transformed the landscape and the inhabitants. Some people gained superpowers, some became mutated monsters, 
+          and some remained normal. Thousand years ago a brave cross-planetary travler who discovered the planet, 
+          who brought his people, started a civilization and became a king. The planet got it’s name after that king, XEXiS. 
+          After the catastrophe, the planet is now divided into factions that fight for survival, resources, and dominance.
         </Typography>
       </Stack>
 
       <Stack
         direction="row"
         alignItems="center"
-        justifyContent="center"
-        spacing={{ xs: 1, sm: 3, md: 5, lg: 8 }}
+        justifyContent="space-evenly"
+        spacing={2}
+        sx={{ mt: 3 }}
       >
-        <MenuButton sx={{ fontSize: 16 }}>DEVELOPER DOCS</MenuButton>
+        <Stack direction="column">
+          <Stat title="Quest for Oasis" subtitle="SURVIVERS SEEKING REST" />
+          <Image
+            src={Logo}
+            alt="Xerxis Logo"
+            style={{ width: "20%", height: 50, objectFit: "contain" }}
+          />
+        </Stack>
 
-        <MenuButton sx={{ fontSize: 16 }}>VOLTZ DOCS</MenuButton>
+        <Stack direction="column">
+          <Stat title="Rise of the Dynasty" subtitle="SUCCEDING OFFSPRINGS OF XERXIS" />
+          <Image
+            src={Logo}
+            alt="Xerxis Logo"
+            style={{ width: "20%", height: 50, objectFit: "contain" }}
+          />
+        </Stack>
+
       </Stack>
-
-      {/* Doors BG */}
-      <Box
-        sx={{
-          mt: -6,
-          backgroundImage:
-            "linear-gradient(180deg,rgba(15,12,29,0) 80%,#0f0c1d)",
-          position: "relative",
-          height: 400,
-          overflow: "hidden",
-          width: "100%",
-        }}
-      >
-        {/* 1 */}
-        <StyledDoor
-          src={DoorImg1}
-          alt="Door Image 1"
-          sx={{
-            left: { xs: "6%", sm: "12%", md: "22%" },
-            top: "52%",
-            transform: `translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, ${Math.min(
-              20,
-              Math.max(0, (600 - scrollPosition) / 30)
-            )}deg)`,
-          }}
-        />
-
-        {/* 2 */}
-        <StyledDoor
-          src={DoorImg2}
-          alt="Door Image 2"
-          sx={{
-            [theme.breakpoints.down("sm")]: {
-              width: "100%",
-              objectFit: "contain",
-            },
-            left: { sm: "8%", md: "27%" },
-            top: "29%",
-            transform: `translate3d(0px, -${Math.min(
-              50,
-              Math.max(0, (600 - scrollPosition) / 15)
-            )}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-          }}
-        />
-
-        {/* 3 */}
-        <StyledDoor
-          src={DoorImg3}
-          alt="Door Image 3"
-          sx={{
-            left: { xs: "17%", sm: "20%", md: "35%" },
-            top: "43%",
-            transform: `translate3d(-${Math.min(
-              50,
-              Math.max(0, (600 - scrollPosition) / 30)
-            )}px, -${Math.min(
-              50,
-              Math.max(0, (600 - scrollPosition) / 40)
-            )}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-          }}
-        />
-
-        {/* 4 */}
-        <StyledDoor
-          src={DoorImg4}
-          alt="Door Image 4"
-          sx={{
-            left: { xs: "20%", sm: "25%", md: "44%" },
-            top: "36%",
-            transform: `translate3d(${Math.min(
-              50,
-              Math.max(0, (600 - scrollPosition) / 15)
-            )}px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-          }}
-        />
-      </Box>
     </Container>
   );
 };
 
-export default Section8;
+export default Section3;

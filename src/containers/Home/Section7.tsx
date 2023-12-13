@@ -18,19 +18,19 @@ import { useRef } from "react";
 
 const CARDS = [
   {
-    title: "FIX TAKERS",
+    title: "GET THE GAME",
     subtitle:
-      "Trading rates for fixed returns? Convert any asset with a variable rate into a fixed rate product.",
+      "Download the game executable file and install it in your desktop/laptop. Open the Game",
   },
   {
-    title: "LIQUIDITY PROVIDER",
+    title: "CHOOSE TEAM",
     subtitle:
-      "Liquidity to invest? Deposit within your tick range, collect returns.",
+      "Selcet your prefered team to join in the quest. There are generous rewards if you perform well. We recomment ot read intruction and play well.",
   },
   {
-    title: "VARIABLE TAKERS",
+    title: "BUY OR SELL",
     subtitle:
-      "Trading variable rates with leverage? Take variable, take alpha.",
+      "You can buy (or sell) a character or a tool bith pre-game or in-game.\nYou can also play with default ",
   },
 ];
 
@@ -76,20 +76,18 @@ const Section7 = () => {
         sx={{ textAlign: "center", mb: { xs: 5, md: 12 } }}
       >
         <HomeTitle sx={{ mb: 1.5 }} color={theme.palette.secondary.light}>
-          THE PLAYERS
+          MULTI-PLAYERS
         </HomeTitle>
 
         <Typography variant="h2" sx={{ fontWeight: "bold", mb: 2 }}>
-          Trade Rates Like a Pro
+          Get Realtime Experience
         </Typography>
 
         <Typography
           sx={{ letterSpacing: "1.5px", maxWidth: 720 }}
           color="text.secondary"
         >
-          Voltz is foundational defi infrastructure, unlocking waves of
-          composable, community-led opportunities for builders, innovators and
-          creators.
+          Zerxis allows you to play with your firends or randome person online. We explain how you can enable this feature. (Comming Soon...)
         </Typography>
       </Stack>
 
@@ -130,7 +128,7 @@ const Section7 = () => {
 
       <Stack alignItems="center">
         <MenuButton sx={{ fontSize: 16 }}>
-          LEARN MORE ABOUT HOW THE PROTOCOL WORKS
+          WANT TO LEARN TECHNICALITIES OF THE GAME
         </MenuButton>
       </Stack>
     </Container>
